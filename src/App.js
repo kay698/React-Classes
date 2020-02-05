@@ -19,7 +19,9 @@ class App extends Component {
           >
             Learn React
           </a>
-          <Welcome text="Welcome to React" />
+          <Welcome text="Welcome to State" />
+          <p>This should show and hide</p>
+          <button>Show/Hide</button>
         </header>
       </div>
     );
@@ -28,23 +30,17 @@ class App extends Component {
 
 class Welcome extends Component {
   render() {
-    // object deconstructing below
     const { text } = this.props;
     return (
       <>
-        {/* <h1 className = "App-title">{this.props.text}</h1> */}
-        {/* props enables us pass dynamic values into a parent component */}
-        {/* after deconstructing, we remove this.props and only pass in text*/}
-
         <h1 className="App-title">{text}</h1>
-        <p>chidera</p>
-        {/* <App/> */}
+        {/* <p>chidera</p> */}
       </>
     );
   }
 }
 
-export default Welcome;
+export default App;
 
 // //explicit function
 // const myFunction = () => {
