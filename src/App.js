@@ -3,6 +3,21 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+//life cycle methods are used to set a state and props for sepcific timing
+  constructor(props) {
+    super(props);
+    console.log('will mount')
+  }//constructor won't be used coz we have state
+//cwm fired before the component renders and does not triger a rerender
+  componentWillMount() {
+    console.log('will mount')
+  }
+
+  //cdm fires immediately after rendering also  triggers a rerender
+  componentDidMount() {
+    console.log('mounted')
+  }
+
   state = {
     toggle : true,    
   }
@@ -31,7 +46,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Welcome text="Welcome to State" toggle = {this.state.toggle} />
+          <Welcome text="Welcome to Life Cycle Methods" toggle = {this.state.toggle} />
           {! this.state.toggle &&
            <p>This Should Hide And Show</p>
           }
@@ -49,7 +64,7 @@ class Welcome extends Component {
   }
   render() {
     const { text, toggle} = this.props;
-    console.log(toggle)//toggle has been passed as a prop into the welcome component
+    console.log(toggle)
     return (
       <>
         <h1 className="App-title">{text}</h1>
