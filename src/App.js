@@ -31,8 +31,8 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Welcome text="Welcome to State" />
-          {!this.state.toggle &&
+          <Welcome text="Welcome to State" toggle = {this.state.toggle} />
+          {! this.state.toggle &&
            <p>This Should Hide And Show</p>
           }
         
@@ -48,7 +48,8 @@ class Welcome extends Component {
     toggle : true
   }
   render() {
-    const { text } = this.props;
+    const { text, toggle} = this.props;
+    console.log(toggle)//toggle has been passed as a prop into the welcome component
     return (
       <>
         <h1 className="App-title">{text}</h1>
