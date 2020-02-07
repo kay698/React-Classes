@@ -3,14 +3,22 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  state = {
+    toggle : true,    
+  }
+
+  toggle = () => {
+
+    this.setState({
+      toggle : !this.state.toggle
+    })
+  }
+  
   render() {
     return (
-      <div className="App">
+      <div>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -18,17 +26,27 @@ class App extends Component {
             rel="noopener noreferrer"
           >
             Learn React
-          </a>
+          </a> 
+          
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
           <Welcome text="Welcome to State" />
-          <p>This should show and hide</p>
-          <button>Show/Hide</button>
-        </header>
-      </div>
+          {!this.state.toggle &&
+           <p>This Should Hide And Show</p>
+          }
+        
+          <button onClick = {this.toggle}>Show Hidden Text</button>
+          </header>
+          </div>
     );
   }
 }
 
 class Welcome extends Component {
+  state = {
+    toggle : true
+  }
   render() {
     const { text } = this.props;
     return (
