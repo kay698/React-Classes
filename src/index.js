@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 let contacts = [
   {
     id : '0',
-    name : 'kelechi',
+    name : 'kelechi', 
     phone : "909"
   },
   {
